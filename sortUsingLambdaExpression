@@ -1,0 +1,51 @@
+package java8features.lamdaexpression;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+ class movies
+{ 
+	String movie;
+	int yor;
+	String actor;
+	double imbD;
+	
+	movies(String movie,int yor,String actor,double imbD)
+	{
+		this.movie=movie;
+		this.yor=yor;
+		this.actor=actor;
+		this.imbD=imbD;
+	}
+	}
+public class sortUsingLambda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<movies> al1=new ArrayList<movies>();
+		al1.add(new movies("KGF",2018,"Yash",8.9));
+		al1.add(new movies("Animal",2023,"Ranbir",9.9));
+		al1.add(new movies("Kantara",2022,"Rishabh",8.9));
+		
+		
+		Collections.sort(al1,(mov1,mov2)->{
+//			if(mov1.yor<mov2.yor)
+//			{
+//				return 1;
+//			}
+//			else if(mov1.yor>mov2.yor)
+//			{
+//				return -1;
+//			}
+//			else { return 0;}
+			return mov1.actor.compareTo(mov2.actor);
+		});
+		
+		
+		al1.forEach((m)->
+		{System.out.println(m.movie+"-"+m.yor+"-"+m.actor);
+		});
+
+	}
+
+}
